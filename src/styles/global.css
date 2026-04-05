@@ -59,3 +59,13 @@
   .footer__bottom { flex-direction: column; gap: 12px; padding: 16px 20px; }
   .editorial__stats { gap: 32px; flex-wrap: wrap; }
 }
+@keyframes fadeUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero__overlay > * {
+          animation: fadeUp 0.9s var(--ease-out) both;
+        }
+        .hero__overlay > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero__overlay > *:nth-child(2) { animation-delay: 0.25s; }
+        .hero__overlay > *:nth-child(3) { animation-delay: 0.4s; }

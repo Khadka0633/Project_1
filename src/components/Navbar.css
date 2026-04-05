@@ -1,0 +1,100 @@
+/* ── Announcement Bar ─────────────────────────────────── */
+        .announce {
+          background: var(--espresso);
+          color: var(--sand);
+          text-align: center;
+          padding: 10px 20px;
+          font-size: 10px;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          font-family: var(--ff-sans);
+        }
+
+        /* ── Navbar ───────────────────────────────────────────── */
+        .nav {
+          position: sticky;
+          top: 0;
+          z-index: 40;
+          background: rgba(245,239,230,0.97);
+          backdrop-filter: blur(12px);
+          border-bottom: 1px solid var(--sand);
+        }
+        .nav__inner {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 40px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 32px;
+        }
+        .nav__logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav__logo-mark {
+          width: 32px; height: 32px;
+          background: var(--espresso);
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          color: var(--sand);
+          font-family: var(--ff-serif);
+          font-size: 14px;
+          font-style: italic;
+        }
+        .nav__brand { font-family: var(--ff-serif); font-size: 18px; font-weight: 700; color: var(--espresso); line-height: 1.1; }
+        .nav__tagline { font-family: var(--ff-sans); font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ghost); }
+        .nav__links { display: flex; gap: 36px; }
+        .nav__link {
+          font-family: var(--ff-sans);
+          font-size: 10px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: var(--warm-mid);
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+        .nav__link:hover { color: var(--espresso); }
+        .nav__actions { display: flex; align-items: center; gap: 8px; }
+        .nav__action-btn {
+          background: none; border: none; cursor: pointer;
+          padding: 8px;
+          border-radius: 50%;
+          color: var(--espresso);
+          transition: background 0.2s;
+          position: relative;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .nav__action-btn:hover { background: var(--sand); }
+        .nav__cart-count {
+          position: absolute; top: 2px; right: 2px;
+          width: 16px; height: 16px;
+          background: var(--caramel);
+          color: white;
+          font-size: 9px;
+          font-weight: 700;
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          font-family: var(--ff-sans);
+        }
+        .nav__search-pill {
+          display: flex; align-items: center; gap: 8px;
+          padding: 8px 16px;
+          border: 1px solid var(--sand);
+          border-radius: 999px;
+          background: none;
+          cursor: pointer;
+          font-family: var(--ff-sans);
+          font-size: 11px;
+          color: var(--ghost);
+          transition: border-color 0.2s;
+        }
+        .nav__search-pill:hover { border-color: var(--ghost); }
+        .nav__mobile-btn {
+          display: none; background: none; border: none; cursor: pointer;
+          color: var(--espresso); padding: 8px;
+        }
+        .nav__mobile-menu {
+          border-top: 1px solid var(--sand);
+          padding: 16px 40px;
+          display: flex; flex-direction: column; gap: 12px;
+          background: rgba(245,239,230,0.97);
+        }

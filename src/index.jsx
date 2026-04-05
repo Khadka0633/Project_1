@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { bags, categories } from "./data/bags";
 import { testimonials } from "./data/testimonials";
+import Navbar from "./components/Navbar";
 
 
 
@@ -198,7 +199,6 @@ export default function Start() {
   const [cartOpen, setCartOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
-  const [mobileMenu, setMobileMenu] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
   const [newsletter, setNewsletter] = useState("");
 
@@ -224,6 +224,28 @@ export default function Start() {
   return (
     <>
       <style>{`
+       @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+        /* ── Tokens ───────────────────────────────────────────── */
+        :root {
+          --cream:    #F5EFE6;
+          --sand:     #EBE0D0;
+          --mink:     #C8B49A;
+          --caramel:  #C8956C;
+          --espresso: #2C1810;
+          --warm-mid: #7D6540;
+          --ghost:    #9B7E6A;
+          --white:    #FDFAF6;
+          --ff-serif: 'Playfair Display', Georgia, serif;
+          --ff-italic:'Cormorant Garamond', Georgia, serif;
+          --ff-sans:  'Jost', sans-serif;
+          --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--cream); font-family: var(--ff-sans); color: var(--espresso); -webkit-font-smoothing: antialiased; }
+
         /* ── Google Fonts ─────────────────────────────────────── */
       
         /* ── Photo Slot System ────────────────────────────────── */
@@ -289,107 +311,7 @@ export default function Start() {
           opacity: 0.6;
         }
 
-        /* ── Announcement Bar ─────────────────────────────────── */
-        .announce {
-          background: var(--espresso);
-          color: var(--sand);
-          text-align: center;
-          padding: 10px 20px;
-          font-size: 10px;
-          letter-spacing: 0.3em;
-          text-transform: uppercase;
-          font-family: var(--ff-sans);
-        }
-
-        /* ── Navbar ───────────────────────────────────────────── */
-        .nav {
-          position: sticky;
-          top: 0;
-          z-index: 40;
-          background: rgba(245,239,230,0.97);
-          backdrop-filter: blur(12px);
-          border-bottom: 1px solid var(--sand);
-        }
-        .nav__inner {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 40px;
-          height: 70px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 32px;
-        }
-        .nav__logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav__logo-mark {
-          width: 32px; height: 32px;
-          background: var(--espresso);
-          border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          color: var(--sand);
-          font-family: var(--ff-serif);
-          font-size: 14px;
-          font-style: italic;
-        }
-        .nav__brand { font-family: var(--ff-serif); font-size: 18px; font-weight: 700; color: var(--espresso); line-height: 1.1; }
-        .nav__tagline { font-family: var(--ff-sans); font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ghost); }
-        .nav__links { display: flex; gap: 36px; }
-        .nav__link {
-          font-family: var(--ff-sans);
-          font-size: 10px;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: var(--warm-mid);
-          text-decoration: none;
-          transition: color 0.2s;
-        }
-        .nav__link:hover { color: var(--espresso); }
-        .nav__actions { display: flex; align-items: center; gap: 8px; }
-        .nav__action-btn {
-          background: none; border: none; cursor: pointer;
-          padding: 8px;
-          border-radius: 50%;
-          color: var(--espresso);
-          transition: background 0.2s;
-          position: relative;
-          display: flex; align-items: center; justify-content: center;
-        }
-        .nav__action-btn:hover { background: var(--sand); }
-        .nav__cart-count {
-          position: absolute; top: 2px; right: 2px;
-          width: 16px; height: 16px;
-          background: var(--caramel);
-          color: white;
-          font-size: 9px;
-          font-weight: 700;
-          border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          font-family: var(--ff-sans);
-        }
-        .nav__search-pill {
-          display: flex; align-items: center; gap: 8px;
-          padding: 8px 16px;
-          border: 1px solid var(--sand);
-          border-radius: 999px;
-          background: none;
-          cursor: pointer;
-          font-family: var(--ff-sans);
-          font-size: 11px;
-          color: var(--ghost);
-          transition: border-color 0.2s;
-        }
-        .nav__search-pill:hover { border-color: var(--ghost); }
-        .nav__mobile-btn {
-          display: none; background: none; border: none; cursor: pointer;
-          color: var(--espresso); padding: 8px;
-        }
-        .nav__mobile-menu {
-          border-top: 1px solid var(--sand);
-          padding: 16px 40px;
-          display: flex; flex-direction: column; gap: 12px;
-          background: rgba(245,239,230,0.97);
-        }
-
+        
         /* ── Hero ─────────────────────────────────────────────── */
         /*
           HERO PHOTO LAYOUT — Hermès style.
@@ -896,52 +818,8 @@ export default function Start() {
       `}</style>
 
       {/* ── Announcement ─────────────────────────────────── */}
-      <div className="announce">
-        ✦ &nbsp; Complimentary shipping on all orders &nbsp;·&nbsp; Free gift wrapping &nbsp;·&nbsp; 30-day returns &nbsp; ✦
-      </div>
-
-      {/* ── Navbar ───────────────────────────────────────── */}
-      <nav className="nav">
-        <div className="nav__inner">
-          <a href="#" className="nav__logo">
-            <div className="nav__logo-mark">M</div>
-            <div>
-              <div className="nav__brand">Maison Lumière</div>
-              <div className="nav__tagline">Luxury Bags</div>
-            </div>
-          </a>
-
-          <div className="nav__links">
-            {["Collection", "New Arrivals", "Bestsellers", "Stories", "About"].map(l => (
-              <a key={l} href="#" className="nav__link">{l}</a>
-            ))}
-          </div>
-
-          <div className="nav__actions">
-            <button className="nav__search-pill">
-              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-              Search
-            </button>
-            <button className="nav__action-btn" onClick={() => setCartOpen(true)}>
-              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-              {cartCount > 0 && <span className="nav__cart-count">{cartCount}</span>}
-            </button>
-            <button className="nav__action-btn">
-              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            </button>
-            <button className="nav__mobile-btn" onClick={() => setMobileMenu(!mobileMenu)}>
-              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
-          </div>
-        </div>
-        {mobileMenu && (
-          <div className="nav__mobile-menu">
-            {["Collection", "New Arrivals", "Bestsellers", "Stories", "About"].map(l => (
-              <a key={l} href="#" className="nav__link">{l}</a>
-            ))}
-          </div>
-        )}
-      </nav>
+      <Navbar cartCount={cartCount} onCartOpen={() => setCartOpen(true)}/>
+     
 
       {/* ── Hero — Hermès layout ──────────────────────────── */}
       {/*
