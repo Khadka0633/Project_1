@@ -1,0 +1,61 @@
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+        /* ── Tokens ───────────────────────────────────────────── */
+        :root {
+          --cream:    #F5EFE6;
+          --sand:     #EBE0D0;
+          --mink:     #C8B49A;
+          --caramel:  #C8956C;
+          --espresso: #2C1810;
+          --warm-mid: #7D6540;
+          --ghost:    #9B7E6A;
+          --white:    #FDFAF6;
+          --ff-serif: 'Playfair Display', Georgia, serif;
+          --ff-italic:'Cormorant Garamond', Georgia, serif;
+          --ff-sans:  'Jost', sans-serif;
+          --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--cream); font-family: var(--ff-sans); color: var(--espresso); -webkit-font-smoothing: antialiased; }
+
+        /* ── Animations ───────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero__overlay > * {
+  animation: fadeUp 0.9s var(--ease-out) both;
+}
+.hero__overlay > *:nth-child(1) { animation-delay: 0.1s; }
+.hero__overlay > *:nth-child(2) { animation-delay: 0.25s; }
+.hero__overlay > *:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; height: 70vw; max-height: 600px; }
+  .hero__secondary-stack { display: none; }
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .footer__main { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav__inner { padding: 0 20px; }
+  .nav__links { display: none; }
+  .nav__search-pill { display: none; }
+  .nav__mobile-btn { display: block; }
+  .nav__mobile-menu { padding: 16px 20px; }
+  .hero { height: 75vw; min-height: 420px; }
+  .hero__overlay { padding: 24px 24px; }
+  .stats-bar { gap: 32px; padding: 16px 20px; flex-wrap: wrap; }
+  .cat-strip { padding: 12px 20px; }
+  .products { padding: 48px 20px; }
+  .testimonials { padding: 48px 20px; }
+  .newsletter { padding: 48px 20px; }
+  .newsletter__form { flex-direction: column; }
+  .footer__main { grid-template-columns: 1fr; padding: 40px 20px; }
+  .footer__bottom { flex-direction: column; gap: 12px; padding: 16px 20px; }
+  .editorial__stats { gap: 32px; flex-wrap: wrap; }
+}

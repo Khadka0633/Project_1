@@ -1,151 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import { bags, categories } from "./data/bags";
+import { testimonials } from "./data/testimonials";
 
-const bags = [
-  {
-    id: 1,
-    name: "Le Soleil Tote",
-    subtitle: "Sunlit afternoons, effortlessly carried",
-    price: 285,
-    originalPrice: 380,
-    category: "Totes",
-    color: "Caramel",
-    colorHex: "#C8956C",
-    badge: "Bestseller",
-    photo:"/images/front-image.jpg",
-    bg: "from-amber-50 to-orange-50",
-    accent: "#8B5E3C",
-    rating: 4.9,
-    reviews: 847,
-    tag: "New Season"
-  },
-  {
-    id: 2,
-    name: "Noir Minaudière",
-    subtitle: "Where evenings become unforgettable",
-    price: 195,
-    originalPrice: null,
-    category: "Clutches",
-    color: "Jet Black",
-    colorHex: "#1A1A1A",
-    badge: "New",
-    photo: "/images/front-image.jpg",
-    bg: "from-slate-100 to-gray-100",
-    accent: "#2D2D2D",
-    rating: 4.8,
-    reviews: 412,
-    tag: "Evening"
-  },
-  {
-    id: 3,
-    name: "Rose Crossbody",
-    subtitle: "Soft mornings and farmers markets",
-    price: 165,
-    originalPrice: 220,
-    category: "Crossbody",
-    color: "Blush Rose",
-    colorHex: "#D4A0A0",
-    badge: "Sale",
-    photo: null,
-    bg: "from-rose-50 to-pink-50",
-    accent: "#9B5E6A",
-    rating: 4.7,
-    reviews: 1203,
-    tag: "Romantic"
-  },
-  {
-    id: 4,
-    name: "Sage Kelly",
-    subtitle: "Structure. Poise. Quiet confidence.",
-    price: 420,
-    originalPrice: null,
-    category: "Structured",
-    color: "Sage Green",
-    colorHex: "#7A9E7E",
-    badge: null,
-    photo: null,
-    bg: "from-green-50 to-emerald-50",
-    accent: "#3D6B4F",
-    rating: 5.0,
-    reviews: 289,
-    tag: "Signature"
-  },
-  {
-    id: 5,
-    name: "Ivory Baguette",
-    subtitle: "A Parisian secret, now yours",
-    price: 245,
-    originalPrice: 310,
-    category: "Baguette",
-    color: "Ivory Cream",
-    colorHex: "#F5EDD8",
-    badge: "Sale",
-    photo: null,
-    bg: "from-yellow-50 to-amber-50",
-    accent: "#7D6540",
-    rating: 4.6,
-    reviews: 631,
-    tag: "Parisian"
-  },
-  {
-    id: 6,
-    name: "Cobalt Bucket",
-    subtitle: "Bold enough to start conversations",
-    price: 175,
-    originalPrice: null,
-    category: "Bucket",
-    color: "Cobalt Blue",
-    colorHex: "#2B5BA8",
-    badge: "New",
-    photo: null,
-    bg: "from-blue-50 to-indigo-50",
-    accent: "#1A3C7A",
-    rating: 4.8,
-    reviews: 508,
-    tag: "Statement"
-  },
-  {
-    id: 7,
-    name: "Terracotta Hobo",
-    subtitle: "Lived-in luxury for every journey",
-    price: 195,
-    originalPrice: 260,
-    category: "Hobos",
-    color: "Terracotta",
-    colorHex: "#C1603C",
-    badge: "Sale",
-    photo: null,
-    bg: "from-orange-50 to-red-50",
-    accent: "#7A3520",
-    rating: 4.5,
-    reviews: 764,
-    tag: "Wanderer"
-  },
-  {
-    id: 8,
-    name: "Pearl Mini Satchel",
-    subtitle: "Small bag, immense statement",
-    price: 135,
-    originalPrice: null,
-    category: "Mini",
-    color: "Pearl White",
-    colorHex: "#EDE8E0",
-    badge: "Bestseller",
-    photo: null,
-    bg: "from-stone-50 to-neutral-50",
-    accent: "#6B6058",
-    rating: 4.9,
-    reviews: 1087,
-    tag: "Mini Luxe"
-  },
-];
 
-const categories = ["All", "Totes", "Clutches", "Crossbody", "Structured", "Baguette", "Bucket", "Hobos", "Mini"];
 
-const testimonials = [
-  { name: "Amélie D.", city: "Paris", text: "The Sage Kelly is everything I dreamed of. The quality is exquisite — I get stopped on the street every single day.", bag: "Sage Kelly", stars: 5 },
-  { name: "Sofia R.", city: "Milan", text: "Maison Lumière understands that a bag isn't just an accessory — it's an extension of who you are. Perfection.", bag: "Noir Minaudière", stars: 5 },
-  { name: "Chloe W.", city: "London", text: "Finally a brand that doesn't sacrifice elegance for convenience. My Rose Crossbody is going everywhere with me.", bag: "Rose Crossbody", stars: 5 },
-];
+
+
 
 // ─── Photo Placeholder ────────────────────────────────────────────────────────
 // Drop in any <img src="..."> and it fills perfectly.
@@ -365,28 +225,7 @@ export default function Start() {
     <>
       <style>{`
         /* ── Google Fonts ─────────────────────────────────────── */
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
-
-        /* ── Tokens ───────────────────────────────────────────── */
-        :root {
-          --cream:    #F5EFE6;
-          --sand:     #EBE0D0;
-          --mink:     #C8B49A;
-          --caramel:  #C8956C;
-          --espresso: #2C1810;
-          --warm-mid: #7D6540;
-          --ghost:    #9B7E6A;
-          --white:    #FDFAF6;
-          --ff-serif: 'Playfair Display', Georgia, serif;
-          --ff-italic:'Cormorant Garamond', Georgia, serif;
-          --ff-sans:  'Jost', sans-serif;
-          --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { background: var(--cream); font-family: var(--ff-sans); color: var(--espresso); -webkit-font-smoothing: antialiased; }
-
+      
         /* ── Photo Slot System ────────────────────────────────── */
         /*
           HOW TO USE:
@@ -939,10 +778,10 @@ export default function Start() {
         .footer__main { max-width: 1400px; margin: 0 auto; padding: 60px 40px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; }
         .footer__brand-name { font-family: var(--ff-serif); font-size: 20px; font-weight: 700; color: var(--sand); margin-bottom: 4px; }
         .footer__brand-tag { font-family: var(--ff-sans); font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ghost); margin-bottom: 16px; }
-        .footer__brand-body { font-family: var(--ff-sans); font-size: 12px; color: #3D2C24; line-height: 1.7; }
+        .footer__brand-body { font-family: var(--ff-sans); font-size: 12px; color: #8B7355; line-height: 1.7; }
         .footer__col-title { font-family: var(--ff-sans); font-size: 10px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mink); margin-bottom: 20px; }
         .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .footer__links a { font-family: var(--ff-sans); font-size: 12px; color: #3D2C24; text-decoration: none; transition: color 0.2s; }
+        .footer__links a { font-family: var(--ff-sans); font-size: 12px; color: #8B7355; text-decoration: none; transition: color 0.2s; }
         .footer__links a:hover { color: var(--caramel); }
         .footer__bottom { border-top: 1px solid #1E0E08; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
         .footer__copy { font-family: var(--ff-sans); font-size: 10px; letter-spacing: 0.15em; color: #2A1810; }
