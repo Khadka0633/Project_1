@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { bags, categories } from "./data/bags";
 import { testimonials } from "./data/testimonials";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 
@@ -696,20 +697,7 @@ export default function Start() {
         .newsletter__success-sub { font-family: var(--ff-sans); font-size: 12px; color: var(--ghost); }
 
         /* ── Footer ───────────────────────────────────────────── */
-        .footer { background: #12080400; background: #120804; color: var(--warm-mid); }
-        .footer__main { max-width: 1400px; margin: 0 auto; padding: 60px 40px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; }
-        .footer__brand-name { font-family: var(--ff-serif); font-size: 20px; font-weight: 700; color: var(--sand); margin-bottom: 4px; }
-        .footer__brand-tag { font-family: var(--ff-sans); font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ghost); margin-bottom: 16px; }
-        .footer__brand-body { font-family: var(--ff-sans); font-size: 12px; color: #8B7355; line-height: 1.7; }
-        .footer__col-title { font-family: var(--ff-sans); font-size: 10px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mink); margin-bottom: 20px; }
-        .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .footer__links a { font-family: var(--ff-sans); font-size: 12px; color: #8B7355; text-decoration: none; transition: color 0.2s; }
-        .footer__links a:hover { color: var(--caramel); }
-        .footer__bottom { border-top: 1px solid #1E0E08; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
-        .footer__copy { font-family: var(--ff-sans); font-size: 10px; letter-spacing: 0.15em; color: #2A1810; }
-        .footer__legal { display: flex; gap: 24px; }
-        .footer__legal a { font-family: var(--ff-sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #2A1810; text-decoration: none; transition: color 0.2s; }
-        .footer__legal a:hover { color: var(--caramel); }
+        
 
         /* ── Cart ─────────────────────────────────────────────── */
         .cart-overlay { position: fixed; inset: 0; z-index: 50; display: flex; }
@@ -980,33 +968,8 @@ export default function Start() {
       </section>
 
       {/* ── Footer ───────────────────────────────────────── */}
-      <footer className="footer">
-        <div className="footer__main">
-          <div>
-            <div className="footer__brand-name">Maison Lumière</div>
-            <div className="footer__brand-tag">Luxury Bags Since 2014</div>
-            <p className="footer__brand-body">Handcrafted with heritage. Worn with intention. Made to be remembered.</p>
-          </div>
-          {[
-            { title: "Shop",        links: ["New Arrivals", "Totes", "Clutches", "Crossbody", "Sale"] },
-            { title: "Maison",      links: ["Our Story", "Craftsmanship", "Sustainability", "Careers"] },
-            { title: "Client Care", links: ["Shipping & Returns", "Size Guide", "Authentication", "Contact Us"] },
-          ].map(col => (
-            <div key={col.title}>
-              <h4 className="footer__col-title">{col.title}</h4>
-              <ul className="footer__links">
-                {col.links.map(l => <li key={l}><a href="#">{l}</a></li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="footer__bottom">
-          <p className="footer__copy">© 2026 Maison Lumière · All Rights Reserved</p>
-          <div className="footer__legal">
-            {["Privacy", "Terms", "Cookies"].map(l => <a key={l} href="#">{l}</a>)}
-          </div>
-        </div>
-      </footer>
+      <Footer/>
+      
 
       {/* ── Cart ─────────────────────────────────────────── */}
       {cartOpen && <CartSidebar cart={cart} onClose={() => setCartOpen(false)} onRemove={removeFromCart} onQty={updateQty} />}

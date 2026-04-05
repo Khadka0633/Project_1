@@ -1,0 +1,19 @@
+
+
+
+
+
+.footer { background: #12080400; background: #120804; color: var(--warm-mid); }
+        .footer__main { max-width: 1400px; margin: 0 auto; padding: 60px 40px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; }
+        .footer__brand-name { font-family: var(--ff-serif); font-size: 20px; font-weight: 700; color: var(--sand); margin-bottom: 4px; }
+        .footer__brand-tag { font-family: var(--ff-sans); font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ghost); margin-bottom: 16px; }
+        .footer__brand-body { font-family: var(--ff-sans); font-size: 12px; color: #8B7355; line-height: 1.7; }
+        .footer__col-title { font-family: var(--ff-sans); font-size: 10px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mink); margin-bottom: 20px; }
+        .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer__links a { font-family: var(--ff-sans); font-size: 12px; color: #8B7355; text-decoration: none; transition: color 0.2s; }
+        .footer__links a:hover { color: var(--caramel); }
+        .footer__bottom { border-top: 1px solid #1E0E08; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+        .footer__copy { font-family: var(--ff-sans); font-size: 10px; letter-spacing: 0.15em; color: #2A1810; }
+        .footer__legal { display: flex; gap: 24px; }
+        .footer__legal a { font-family: var(--ff-sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #2A1810; text-decoration: none; transition: color 0.2s; }
+        .footer__legal a:hover { color: var(--caramel); }
