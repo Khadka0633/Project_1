@@ -176,7 +176,7 @@ function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
         <div className="bag-card__row">
           <h3 className="bag-card__name">{bag.name}</h3>
           <div className="bag-card__pricing">
-            <span className="bag-card__price">${bag.price}</span>
+            <span className="bag-card__price">Rs{bag.price}</span>
             {bag.originalPrice && <span className="bag-card__original">${bag.originalPrice}</span>}
           </div>
         </div>
