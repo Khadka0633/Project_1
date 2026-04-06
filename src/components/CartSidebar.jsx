@@ -1,6 +1,6 @@
 
 
-
+import PhotoSlot from "./PhotoSlot";
 
 export default function CartSidebar({ cart, onClose, onRemove, onQty }) {
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
