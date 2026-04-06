@@ -118,8 +118,6 @@ const wishlistIds = wishlist.map(i => i.id)
      
       <Footer/>
       
-
-      {/* ── Cart ─────────────────────────────────────────── */}
       {cartOpen && <CartSidebar cart={cart} onClose={() => setCartOpen(false)} onRemove={removeFromCart} onQty={updateQty} />}
         {wishlistOpen && (
   <WishlistSidebar

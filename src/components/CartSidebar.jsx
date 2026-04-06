@@ -39,7 +39,7 @@ export default function CartSidebar({ cart, onClose, onRemove, onQty }) {
                   <button onClick={() => onQty(item.id, -1)} className="qty-btn">−</button>
                   <span className="qty-val">{item.qty}</span>
                   <button onClick={() => onQty(item.id, 1)} className="qty-btn">+</button>
-                  <span className="cart-item__price">${(item.price * item.qty).toFixed(2)}</span>
+                  <span className="cart-item__price">Rs{(item.price * item.qty).toFixed(2)}</span>
                 </div>
               </div>
               <button onClick={() => onRemove(item.id)} className="cart-item__remove">✕</button>
@@ -49,11 +49,11 @@ export default function CartSidebar({ cart, onClose, onRemove, onQty }) {
 
         {cart.length > 0 && (
           <div className="cart-footer">
-            <div className="cart-row"><span>Subtotal</span><span>${total.toFixed(2)}</span></div>
+            <div className="cart-row"><span>Subtotal</span><span>Rs{total.toFixed(2)}</span></div>
             <div className="cart-row"><span>Shipping</span><span className="free">Complimentary</span></div>
             <div className="cart-total">
               <span>Total</span>
-              <span>${total.toFixed(2)}</span>
+              <span>Rs{total.toFixed(2)}</span>
             </div>
             <button className="checkout-btn">Proceed to Checkout</button>
             <p className="cart-note">Free returns · Secure checkout · Gift wrapping available</p>
