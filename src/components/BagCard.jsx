@@ -30,7 +30,7 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
         <div className="bag-card__badges">
           {bag.badge && (
             <span className={`badge badge--${bag.badge.toLowerCase()}`}>
-              {bag.badge === "Sale" && discount ? `−${discount}%` : bag.badge}
+              {bag.badge === "Sale" && discount ? `−Rs{discount}%` : bag.badge}
             </span>
           )}
           <span className="badge badge--tag">{bag.tag}</span>
@@ -38,7 +38,7 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
 
         {/* Wishlist */}
         <button
-          onClick={(e) => { e.stopPropagation(); onWishlist(bag.id); }}
+          onClick={(e) => { e.stopPropagation(); onWishlist(bag); }}
           className={`wishlist-btn ${isWished ? "wished" : ""}`}
         >
           <svg width="16" height="16" fill={isWished ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">

@@ -13,6 +13,7 @@ import "./styles/global.css"
 import StatusBar from "./components/StatusBar";
 import CategoryStrip from "./components/CategoryStrip";
 import Hero from "./components/Hero";
+import WishlistSidebar from "./components/WishListSidebar";
 
 
 
@@ -25,6 +26,7 @@ export default function App() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
   const [heroVisible, setHeroVisible] = useState(false);
+  const [wishlistOpen, setWishlistOpen] = useState(false);
 
   useEffect (() => {
     setTimeout(() => setHeroVisible(true), 100)
@@ -42,7 +44,16 @@ export default function App() {
 
   const removeFromCart = (id) => setCart(prev => prev.filter(i => i.id !== id));
   const updateQty = (id, d) => setCart(prev => prev.map(i => i.id === id ? { ...i, qty: Math.max(1, i.qty + d) } : i));
-  const toggleWishlist = (id) => setWishlist(prev => prev.includes(id) ? prev.filter(w => w !== id) : [...prev, id]);
+ const toggleWishlist = (bag) => {
+  setWishlist(prev =>
+    prev.find(i => i.id === bag.id)
+      ? prev.filter(i => i.id !== bag.id)
+      : [...prev, bag]
+  );
+};
+
+const wishlistIds = wishlist.map(i => i.id)
+
 
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
   const filtered = bags.filter(b => {
@@ -53,7 +64,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar cartCount={cartCount} onCartOpen={() => setCartOpen(true)}/>
+      <Navbar cartCount={cartCount} onCartOpen={() => setCartOpen(true)} onWishlistOpen={()=> setWishlistOpen(true)}/>
     
       <Hero visible={heroVisible}/>
     
@@ -90,7 +101,7 @@ export default function App() {
         ) : (
           <div className="bag-grid">
             {filtered.map(bag => (
-              <BagCard key={bag.id} bag={bag} onAdd={addToCart} onWishlist={toggleWishlist} wishlistIds={wishlist} />
+              <BagCard key={bag.id} bag={bag} onAdd={addToCart} onWishlist={toggleWishlist} wishlistIds={wishlistIds} />
             ))}
           </div>
         )}
@@ -110,6 +121,14 @@ export default function App() {
 
       {/* ── Cart ─────────────────────────────────────────── */}
       {cartOpen && <CartSidebar cart={cart} onClose={() => setCartOpen(false)} onRemove={removeFromCart} onQty={updateQty} />}
+        {wishlistOpen && (
+  <WishlistSidebar
+    wishlistItems={wishlist}
+    onClose={() => setWishlistOpen(false)}
+    onRemove={(id) => setWishlist(prev => prev.filter(i => i.id !== id))}
+    onAddToCart={(item) => { addToCart(item); setWishlistOpen(false); }}
+  />
+)}
     </>
   );
 }
