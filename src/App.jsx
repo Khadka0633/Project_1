@@ -4,7 +4,6 @@ import { bags } from "./data/bags";
 import { testimonials } from "./data/testimonials";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import PhotoSlot from "./components/PhotoSlot";
 import BagCard from "./components/BagCard";
 import CartSidebar from "./components/CartSidebar"
 import Editorial from "./components/Editorial"
@@ -13,6 +12,7 @@ import Newsletter from "./components/Newsletter"
 import "./styles/global.css"
 import StatusBar from "./components/StatusBar";
 import CategoryStrip from "./components/CategoryStrip";
+import Hero from "./components/Hero";
 
 
 
@@ -24,6 +24,11 @@ export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect (() => {
+    setTimeout(() => setHeroVisible(true), 100)
+  }, [])
  
  
 
@@ -49,30 +54,8 @@ export default function App() {
   return (
     <>
       <Navbar cartCount={cartCount} onCartOpen={() => setCartOpen(true)}/>
-     <section className="hero" style={{ gridTemplateColumns: "1fr" }}>
-  {/* Left: primary tall photo */}
-  <div className="hero__primary">
-    <PhotoSlot
-      src="/images/front-image.jpg"
-      alt="Maison Lumière — hero bag"
-      colorHex="#C8956C"
-      label="Main Hero Photo"
-    />
-    <div className="hero__overlay">
-      <p className="hero__season">✦ New Season · Spring 2026</p>
-      <h1 className="hero__title">
-        Carry Your<br />
-        <em>Story</em><br />
-        with Grace
-      </h1>
-      <div className="hero__ctas">
-        <button className="hero__cta-primary">Explore Collection</button>
-        <button className="hero__cta-ghost">Our Story</button>
-      </div>
-    </div>
-  </div>
-</section>
-
+    
+      <Hero visible={heroVisible}/>
     
       <StatusBar/>
 
@@ -114,7 +97,7 @@ export default function App() {
       </section>
 
      
-     <Editorial/>
+      <Editorial/>
 
     
       <Testimonials testimonials = {testimonials}/>
