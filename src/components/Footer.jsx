@@ -6,13 +6,13 @@ export default function Footer(){
         <footer className="footer">
         <div className="footer__main">
           <div>
-            <div className="footer__brand-name">Maison Lumière</div>
+            <div className="footer__brand-name">HIMSAMA</div>
             <div className="footer__brand-tag">Luxury Bags Since 2014</div>
             <p className="footer__brand-body">Handcrafted with heritage. Worn with intention. Made to be remembered.</p>
           </div>
           {[
             { title: "Shop",        links: ["New Arrivals", "Totes", "Clutches", "Crossbody", "Sale"] },
-            { title: "Maison",      links: ["Our Story", "Craftsmanship", "Sustainability", "Careers"] },
+            { title: "HIMSAMA",      links: ["Our Story", "Craftsmanship", "Sustainability", "Careers"] },
             { title: "Client Care", links: ["Shipping & Returns", "Size Guide", "Authentication", "Contact Us"] },
           ].map(col => (
             <div key={col.title}>

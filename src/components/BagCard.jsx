@@ -1,10 +1,14 @@
 import PhotoSlot from "./PhotoSlot";
 import Stars from "./Stars";
-import { useState } from "react";
+import { act, useState } from "react";
 
 
 export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
   const [added, setAdded] = useState(false);
+  const [activeColor, setActiveColor] = useState(
+    bag.colors?.[0] || { name: bag.color, hex: bag.colorHex, photo: bag.photo }
+  );
+
   const isWished = wishlistIds.includes(bag.id);
   const discount = bag.originalPrice ? Math.round(((bag.originalPrice - bag.price) / bag.originalPrice) * 100) : null;
 
@@ -14,15 +18,17 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
     setTimeout(() => setAdded(false), 1800);
   };
 
+  const colors = bag.colors || [{ name: bag.color, hex: bag.colorHex, photo: bag.photo }];
+
   return (
     <div className="bag-card">
       {/* Photo area — swap photo prop to activate */}
       <div className="bag-card__photo-wrap">
         <PhotoSlot
-          src={bag.photo}
+          src={activeColor.photo}
           alt={bag.name}
           className="bag-card__photo"
-          colorHex={bag.colorHex}
+          colorHex={activeColor.hex}
           label={bag.name}
         />
 
@@ -30,7 +36,7 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
         <div className="bag-card__badges">
           {bag.badge && (
             <span className={`badge badge--${bag.badge.toLowerCase()}`}>
-              {bag.badge === "Sale" && discount ? `−Rs{discount}%` : bag.badge}
+              {bag.badge === "Sale" && discount ? `−${discount}%` : bag.badge}
             </span>
           )}
           <span className="badge badge--tag">{bag.tag}</span>
@@ -47,11 +53,22 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
         </button>
 
         {/* Color swatch */}
-        <div className="color-chip">
-          <div className="color-chip__dot" style={{ background: bag.colorHex }} />
-          <span>{bag.color}</span>
+       <div className="color-swatches">
+          {colors.map((c) => (
+            <button
+              key={c.name}
+              className={`color-swatch ${activeColor.name === c.name ? "active" : ""}`}
+              style={{ background: c.hex }}
+              title={c.name}
+              onClick={() => setActiveColor(c)}
+            />
+          ))}
         </div>
       </div>
+
+
+
+
 
       {/* Info */}
       <div className="bag-card__body">
@@ -60,7 +77,7 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
           <h3 className="bag-card__name">{bag.name}</h3>
           <div className="bag-card__pricing">
             <span className="bag-card__price">Rs{bag.price}</span>
-            {bag.originalPrice && <span className="bag-card__original">${bag.originalPrice}</span>}
+            {bag.originalPrice && <span className="bag-card__original">Rs{bag.originalPrice}</span>}
           </div>
         </div>
         <p className="bag-card__subtitle">{bag.subtitle}</p>

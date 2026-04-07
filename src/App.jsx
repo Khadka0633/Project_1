@@ -62,9 +62,30 @@ export default function App(){
             wishlistIds={wishlistIds}
           />}
         />
-        <Route path="/collection"   element={<CollectionPage />} />
-        <Route path="/new-arrivals" element={<NewArrivalsPage />} />
-        <Route path="/bestsellers"  element={<BestsellersPage />} />
+
+        <Route path="/collection"   element={
+          <CollectionPage 
+           addToCart={addToCart}
+           toggleWishlist={toggleWishlist}
+           wishlistIds={wishlistIds}
+          />}
+           />
+
+        <Route path="/new-arrivals" element={
+          <NewArrivalsPage 
+          addToCart={addToCart}
+          toggleWishlist={toggleWishlist}
+          wishlistIds={wishlistIds}
+          />} 
+          />
+
+        <Route path="/bestsellers"  element={
+          <BestsellersPage 
+          addToCart={addToCart}
+          toggleWishlist={toggleWishlist}
+          wishlistIds={wishlistIds}
+          />} 
+          />
         <Route path="/stories"      element={<StoriesPage />} />
         <Route path="/about"        element={<AboutPage />} />
       </Routes>

@@ -1,39 +1,49 @@
 export const bags = [
-     {
-        id: 1,
-        name: "Le Soleil Tote",
-        subtitle: "Sunlit afternoons, effortlessly carried",
-        price: 285,
-        originalPrice: 380,
-        category: "Totes",
-        color: "Caramel",
-        colorHex: "#C8956C",
-        badge: "Bestseller",
-        photo:"/images/front-image.jpg",
-        bg: "from-amber-50 to-orange-50",
-        accent: "#8B5E3C",
-        rating: 3,
-        reviews: 847,
-        tag: "New Season"
-      },
       {
-        id: 2,
-        name: "Noir Minaudière",
-        subtitle: "Where evenings become unforgettable",
-        price: 195,
-        originalPrice: null,
-        category: "Clutches",
-        color: "Jet Black",
-        colorHex: "#1A1A1A",
-        badge: "New",
-        photo: "/images/front-image.jpg",
-        bg: "from-slate-100 to-gray-100",
-        accent: "#2D2D2D",
-        rating: 4.8,
-        reviews: 412,
-        tag: "Evening"
-      },
-      {
+    id: 1,
+    name: "Le Soleil Tote",
+    subtitle: "Sunlit afternoons, effortlessly carried",
+    price: 285,
+    originalPrice: 380,
+    category: "Totes",
+    color: "Caramel",
+    colorHex: "#C8956C",
+    badge: "Bestseller",
+    photo: "/images/front-image.jpg",
+    bg: "from-amber-50 to-orange-50",
+    accent: "#8B5E3C",
+    rating: 3,
+    reviews: 847,
+    tag: "New Season",
+    colors: [
+      { name: "Caramel",   hex: "#C8956C", photo: "/images/front-image.jpg" },
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/image-2.jpg" },
+      { name: "Cream",     hex: "#F5EDD8", photo: "/images/image-3.jpg" },
+    ],
+  },
+       {
+    id: 2,
+    name: "Noir Minaudière",
+    subtitle: "Where evenings become unforgettable",
+    price: 195,
+    originalPrice: null,
+    category: "Clutches",
+    color: "Jet Black",
+    colorHex: "#1A1A1A",
+    badge: "New",
+    photo: "/images/front-image.jpg",
+    bg: "from-slate-100 to-gray-100",
+    accent: "#2D2D2D",
+    rating: 4.8,
+    reviews: 412,
+    tag: "Evening",
+    colors: [
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+    ],
+  },
+  
+  {
         id: 3,
         name: "Rose Crossbody",
         subtitle: "Soft mornings and farmers markets",
@@ -48,7 +58,11 @@ export const bags = [
         accent: "#9B5E6A",
         rating: 4.7,
         reviews: 1203,
-        tag: "Romantic"
+        tag: "Romantic",
+        colors: [
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+    ],
       },
       {
         id: 4,
@@ -65,7 +79,11 @@ export const bags = [
         accent: "#3D6B4F",
         rating: 5.0,
         reviews: 289,
-        tag: "Signature"
+        tag: "Signature",
+        colors: [
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+    ],
       },
       {
         id: 5,
@@ -82,7 +100,11 @@ export const bags = [
         accent: "#7D6540",
         rating: 4.6,
         reviews: 631,
-        tag: "Parisian"
+        tag: "Parisian",
+        colors: [
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+    ],
       },
       {
         id: 6,
@@ -99,7 +121,11 @@ export const bags = [
         accent: "#1A3C7A",
         rating: 4.8,
         reviews: 508,
-        tag: "Statement"
+        tag: "Statement",
+        colors: [
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+    ],
       },
       {
         id: 7,
@@ -116,7 +142,11 @@ export const bags = [
         accent: "#7A3520",
         rating: 4.5,
         reviews: 764,
-        tag: "Wanderer"
+        tag: "Wanderer",
+        colors: [
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+    ],
       },
       {
         id: 8,
@@ -133,7 +163,11 @@ export const bags = [
         accent: "#6B6058",
         rating: 4.9,
         reviews: 1087,
-        tag: "Mini Luxe"
+        tag: "Mini Luxe",
+        colors: [
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+    ],
       },
 ]
 
