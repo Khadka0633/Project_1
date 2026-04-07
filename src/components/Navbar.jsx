@@ -1,5 +1,15 @@
 import { useState } from "react"
+import {Link} from "react-router-dom"
 import "./Navbar.css"
+
+
+const navLinks = [
+  {label: "Collection", path:"/collection"},
+  {label: "New Arrivals", path:"/new-arrivals"},
+  {label: "Bestsellers", path:"/bestsellers"},
+  {label: "Stories", path:"/stories"},
+  {label: "About", path:"/about"},
+]
 
  
  export default function Navbar ({cartCount, onCartOpen, onWishlistOpen}) {
@@ -13,17 +23,20 @@ import "./Navbar.css"
       {/* ── Navbar ───────────────────────────────────────── */}
       <nav className="nav">
         <div className="nav__inner">
-          <a href="#" className="nav__logo">
+
+          <Link to="/" className="nav__logo">
             <div className="nav__logo-mark">H</div>
             <div>
               <div className="nav__brand">HIMSAMA</div>
               <div className="nav__tagline">Luxury Bags</div>
             </div>
-          </a>
+          </Link>
 
-          <div className="nav__links">
-            {["Collection", "New Arrivals", "Bestsellers", "Stories", "About"].map(l => (
-              <a key={l} href="#" className="nav__link">{l}</a>
+         <div className="nav__links">
+            {navLinks.map(({ label, path }) => (
+              <Link key={label} to={path} className="nav__link">
+                {label}
+              </Link>
             ))}
           </div>
 
@@ -44,10 +57,19 @@ import "./Navbar.css"
             </button>
           </div>
         </div>
-        {mobileMenu && (
+
+
+      {mobileMenu && (
           <div className="nav__mobile-menu">
-            {["Collection", "New Arrivals", "Bestsellers", "Stories", "About"].map(l => (
-              <a key={l} href="#" className="nav__link">{l}</a>
+            {navLinks.map(({ label, path }) => (
+              <Link
+                key={label}
+                to={path}
+                className="nav__link"
+                onClick={() => setMobileMenu(false)} // close menu on navigate
+              >
+                {label}
+              </Link>
             ))}
           </div>
         )}
