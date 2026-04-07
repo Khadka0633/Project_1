@@ -16,9 +16,9 @@ export const bags = [
     reviews: 847,
     tag: "New Season",
     colors: [
-      { name: "Caramel",   hex: "#C8956C", photo: "/images/front-image.jpg" },
-      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/image-2.jpg" },
-      { name: "Cream",     hex: "#F5EDD8", photo: "/images/image-3.jpg" },
+      { name: "Caramel",   hex: "#08421c", photo: "/images/front-image.jpg" },
+      { name: "Jet Black", hex: "#6b3d3d", photo: "/images/image-2.jpg" },
+      { name: "Cream",     hex: "#084906", photo: "/images/image-3.jpg" },
     ],
   },
        {
@@ -38,8 +38,8 @@ export const bags = [
     reviews: 412,
     tag: "Evening",
     colors: [
-      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
-      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+      { name: "Jet Black", hex: "#6D1A2A", photo: "/images/image-2.jpg" },
+      { name: "Burgundy",  hex: "#030001", photo: "/images/image-4.jpg" },
     ],
   },
   
@@ -60,8 +60,8 @@ export const bags = [
         reviews: 1203,
         tag: "Romantic",
         colors: [
-      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
-      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+      { name: "Jet Black", hex: "#084906", photo: "/images/image-3.jpg" },
+      { name: "Burgundy",  hex: "#b6b6b6b6", photo: "/images/image-7.jpg" },
     ],
       },
       {
@@ -81,8 +81,8 @@ export const bags = [
         reviews: 289,
         tag: "Signature",
         colors: [
-      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
-      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+      { name: "Jet Black", hex: "#030001", photo: "/images/image-4.jpg" },
+      { name: "Burgundy",  hex: "#8d8385", photo: "/images/image-6.jpg" },
     ],
       },
       {
@@ -102,8 +102,8 @@ export const bags = [
         reviews: 631,
         tag: "Parisian",
         colors: [
-      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
-      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+      { name: "Jet Black", hex: "#1a1012", photo: "/images/image-5.jpg" },
+      { name: "Burgundy",  hex: "#1a1012", photo: "/images/image-4.jpg" },
     ],
       },
       {
@@ -123,7 +123,7 @@ export const bags = [
         reviews: 508,
         tag: "Statement",
         colors: [
-      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/image-6.jpg" },
       { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
     ],
       },
@@ -144,8 +144,8 @@ export const bags = [
         reviews: 764,
         tag: "Wanderer",
         colors: [
-      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
-      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+      { name: "Jet Black", hex: "#1A1A1A", photo: "/images/image-7.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-2.jpg" },
     ],
       },
       {
@@ -166,7 +166,7 @@ export const bags = [
         tag: "Mini Luxe",
         colors: [
       { name: "Jet Black", hex: "#1A1A1A", photo: "/images/front-image.jpg" },
-      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-4.jpg" },
+      { name: "Burgundy",  hex: "#6D1A2A", photo: "/images/image-3.jpg" },
     ],
       },
 ]
