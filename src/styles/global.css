@@ -1638,36 +1638,39 @@ body { background: var(--cream); font-family: var(--ff-sans); color: var(--espre
 
 
 /* ── Color Swatches ──────────────────────────────────────── */
+/* ── Color Swatches ──────────────────────────────────────── */
 .color-swatches {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  display: flex;
-  gap: 6px;
+  display: inline-flex;
+  gap: 5px;
   align-items: center;
+  background: #f5f0e8;
+  border: 1px solid #e8e0d5;
+  border-radius: 20px;
+  padding: 4px 8px;
+  margin-bottom: 0.75rem;
 }
 
 .color-swatch {
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.6);
+  border: 1.5px solid rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: transform 0.15s, border-color 0.15s;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   padding: 0;
+  outline: none;
 }
 
 .color-swatch:hover {
   transform: scale(1.2);
-  border-color: #fff;
 }
 
 .color-swatch.active {
-  transform: scale(1.25);
-  border-color: #fff;
-  box-shadow: 0 0 0 1.5px #1a0f0a;
+  transform: scale(1.1);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 1px #1a0f0a;
 }
-
 /* ── Active color name ───────────────────────────────────── */
 .bag-card__color-name {
   font-size: 0.75rem;

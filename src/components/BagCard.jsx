@@ -1,6 +1,6 @@
 import PhotoSlot from "./PhotoSlot";
 import Stars from "./Stars";
-import { act, useState } from "react";
+import { useState } from "react";
 
 
 export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
@@ -53,17 +53,7 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
         </button>
 
         {/* Color swatch */}
-       <div className="color-swatches">
-          {colors.map((c) => (
-            <button
-              key={c.name}
-              className={`color-swatch ${activeColor.name === c.name ? "active" : ""}`}
-              style={{ background: c.hex }}
-              title={c.name}
-              onClick={() => setActiveColor(c)}
-            />
-          ))}
-        </div>
+       
       </div>
 
 
@@ -81,6 +71,17 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
           </div>
         </div>
         <p className="bag-card__subtitle">{bag.subtitle}</p>
+        <div className="color-swatches">
+          {colors.map((c) => (
+            <button
+              key={c.name}
+              className={`color-swatch ${activeColor.name === c.name ? "active" : ""}`}
+              style={{ background: c.hex }}
+              title={c.name}
+              onClick={() => setActiveColor(c)}
+            />
+          ))}
+        </div>
         <div className="bag-card__rating">
           <Stars count={5} />
           <span>{bag.rating} ({bag.reviews.toLocaleString()})</span>
