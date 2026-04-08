@@ -1,9 +1,9 @@
 
-
+import "./Editorial.css"
 export default function Editorial () {
     return(
         <section className="editorial">
-        <div className="editorial__bg-text">LUMIÈRE</div>
+        <div className="editorial__bg-text">HIMSAMA</div>
         <div className="editorial__inner">
           <p className="editorial__eyebrow">Our Promise</p>
           <h2 className="editorial__title">

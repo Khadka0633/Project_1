@@ -1,0 +1,99 @@
+.bag-card {
+  background: white;
+  border-radius: 0;               /* square, editorial */
+  overflow: hidden;
+  transition: box-shadow 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  cursor: pointer;
+}
+.bag-card:hover {
+  box-shadow: 0 20px 60px rgba(44,24,16,0.12);
+  transform: translateY(-4px);
+}
+
+
+.bag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* Card photo — fixed 320px tall; image fills it */
+.bag-card__photo-wrap {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+.bag-card__photo { height: 100%; }
+
+/* Badges */
+.bag-card__badges { position: absolute; top: 14px; left: 14px; display: flex; flex-direction: column; gap: 6px; z-index: 2; }
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-family: var(--ff-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+.badge--sale { background: #C0392B; color: white; }
+.badge--new  { background: var(--espresso); color: var(--sand); }
+.badge--bestseller { background: var(--caramel); color: white; }
+.badge--tag { background: rgba(255,255,255,0.85); backdrop-filter: blur(4px); color: var(--warm-mid); }
+
+/* Wishlist */
+.wishlist-btn {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  width: 34px; height: 34px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(4px);
+  border: none; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ghost);
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s;
+}
+.bag-card:hover .wishlist-btn { opacity: 1; }
+.wishlist-btn.wished { opacity: 1; color: #e05050; }
+
+/* Color chip */
+.color-chip {
+  position: absolute; bottom: 14px; left: 14px; z-index: 2;
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(4px);
+  padding: 5px 12px; border-radius: 999px;
+  font-family: var(--ff-sans); font-size: 10px; color: var(--warm-mid);
+}
+.color-chip__dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 0 0 1px rgba(0,0,0,0.06); }
+
+/* Card body */
+.bag-card__body { padding: 20px 22px 22px; }
+.bag-card__category { font-family: var(--ff-sans); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--caramel); margin-bottom: 6px; }
+.bag-card__row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.bag-card__name { font-family: var(--ff-serif); font-size: 18px; font-weight: 700; color: var(--espresso); line-height: 1.2; }
+.bag-card__pricing { text-align: right; flex-shrink: 0; }
+.bag-card__price { display: block; font-family: var(--ff-serif); font-size: 17px; font-weight: 700; color: var(--espresso); }
+.bag-card__original { display: block; font-family: var(--ff-sans); font-size: 11px; color: var(--mink); text-decoration: line-through; margin-top: 2px; }
+.bag-card__subtitle { font-family: var(--ff-italic); font-size: 13px; font-style: italic; color: var(--ghost); margin-bottom: 10px; }
+.bag-card__rating { display: flex; align-items: center; gap: 8px; font-family: var(--ff-sans); font-size: 11px; color: var(--ghost); margin-bottom: 16px; }
+.add-btn {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--espresso);
+  background: none;
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.add-btn:hover { background: var(--espresso); color: var(--sand); }
+.add-btn.added { background: #f0faf4; border-color: #6abf8a; color: #3a7d55; }
+
+
+/* ── Newsletter ───────────────────────────────────────── */
+
+

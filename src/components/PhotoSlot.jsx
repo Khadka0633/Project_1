@@ -1,7 +1,7 @@
 
 
 
-
+import "./PhotoSlot.css"
 export default function PhotoSlot({ src, alt, className = "", style = {}, colorHex = "#C8956C", label = "" }) {
   return (
     <div

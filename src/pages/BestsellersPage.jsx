@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { bags } from "../data/bags";
 import BagCard from "../components/BagCard";
+import "./BestSellersPage.css"
 
 // Mark your top selling bag IDs here
 const BESTSELLER_IDS = [1, 2, 3, 4, 5, 6];

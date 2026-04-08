@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Newsletter.css"
 
 export default function Newsletter () {
      const [newsletter, setNewsletter] = useState("");
@@ -11,7 +12,7 @@ export default function Newsletter () {
           <p className="newsletter__sub">Join our private list for early access to new arrivals and exclusive offers.</p>
           {subscribed ? (
             <div className="newsletter__success">
-              <div className="newsletter__success-title">Welcome to Maison Lumière</div>
+              <div className="newsletter__success-title">Welcome to HIMSAMA</div>
               <div className="newsletter__success-sub">Check your inbox for a welcome gift</div>
             </div>
           ) : (

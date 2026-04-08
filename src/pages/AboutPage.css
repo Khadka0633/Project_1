@@ -1,0 +1,456 @@
+.about-hero {
+  position: relative;
+  height: 420px;
+  background: url("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=80") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 6, 3, 0.58);
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.about-hero__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+}
+
+.about-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.about-hero__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.06em;
+}
+
+
+/* ── Mission ─────────────────────────────────────────────── */
+.about-mission {
+  padding: 6rem 2rem;
+  background: #faf7f2;
+  text-align: center;
+}
+
+.about-mission__inner {.about-hero {
+  position: relative;
+  height: 420px;
+  background: url("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=80") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 6, 3, 0.58);
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.about-hero__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+}
+
+.about-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.about-hero__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.06em;
+}
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.about-mission__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 1.5rem;
+}
+
+.about-mission__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  color: #1a0f0a;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.about-mission__body {
+  font-size: 1rem;
+  color: #6a5a4a;
+  line-height: 1.8;
+}
+
+/* ── Section Headers ─────────────────────────────────────── */
+.about-section-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 0.5rem;
+}
+
+.about-section-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: #1a0f0a;
+  margin-bottom: 3rem;
+}
+
+/* ── Values ──────────────────────────────────────────────── */
+.about-values {
+  padding: 5rem 4rem;
+  background: #fff;
+}
+
+.about-values__header {
+  text-align: center;
+}
+
+.about-values__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.about-value-card {
+  padding: 2.5rem 2rem;
+  border: 1px solid #e8e0d5;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.about-value-card:hover {
+  box-shadow: 0 8px 32px rgba(26,15,10,0.08);
+}
+
+.about-value-card__icon {
+  font-size: 1.5rem;
+  color: #c9a96e;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.about-value-card__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1a0f0a;
+  margin-bottom: 0.75rem;
+}
+
+.about-value-card__desc {
+  font-size: 0.88rem;
+  color: #6a5a4a;
+  line-height: 1.7;
+}
+
+/* ── Timeline ────────────────────────────────────────────── */
+.about-timeline {
+  padding: 5rem 4rem;
+  background: #1a0f0a;
+}
+
+.about-timeline .about-section-eyebrow {
+  color: #c9a96e;
+}
+
+.about-timeline .about-section-title {
+  color: #fff;
+}
+
+.about-timeline__track {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-timeline__track::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(201,169,110,0.3);
+  transform: translateX(-50%);
+}
+
+.about-timeline__item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.about-timeline__item.left {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.about-timeline__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c9a96e;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.about-timeline__card {
+  flex: 1;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(201,169,110,0.2);
+}
+
+.about-timeline__year {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: #c9a96e;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.about-timeline__event {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Split Section ───────────────────────────────────────── */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.about-split__img-wrap {
+  overflow: hidden;
+}
+
+.about-split__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-split__body {
+  padding: 4rem 2.5rem;
+  background: #faf7f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-split__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  color: #1a0f0a;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.about-split__text {
+  font-size: 0.95rem;
+  color: #6a5a4a;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-split__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e8e0d5;
+}
+
+.about-split__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-split__stat-num {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+  color: #c9a96e;
+}
+
+.about-split__stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a8878;
+  margin-top: 0.25rem;
+}
+
+/* ── Team ────────────────────────────────────────────────── */
+.about-team {
+  padding: 5rem 4rem;
+  background: #fff;
+}
+
+.about-team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.about-team-card {
+  border: 1px solid #e8e0d5;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.about-team-card:hover {
+  box-shadow: 0 8px 32px rgba(26,15,10,0.1);
+}
+
+.about-team-card__img-wrap {
+  height: 300px;
+  overflow: hidden;
+}
+
+.about-team-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.about-team-card:hover .about-team-card__img {
+  transform: scale(1.04);
+}
+
+.about-team-card__body {
+  padding: 1.5rem;
+}
+
+.about-team-card__name {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #1a0f0a;
+  margin-bottom: 0.25rem;
+}
+
+.about-team-card__role {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 0.75rem;
+}
+
+.about-team-card__quote {
+  font-size: 0.88rem;
+  color: #6a5a4a;
+  line-height: 1.65;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── About CTA ───────────────────────────────────────────── */
+.about-cta {
+  position: relative;
+  height: 380px;
+  background: url("https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1600&q=80") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 6, 3, 0.62);
+}
+
+.about-cta__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-cta__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.about-cta__btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.85rem 2.5rem;
+  background: #c9a96e;
+  color: #1a0f0a;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.about-cta__btn:hover {
+  background: #fff;
+}

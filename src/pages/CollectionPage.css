@@ -1,0 +1,104 @@
+.collection-hero {
+  position: relative;
+  height: 420px;
+  background: url("https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1600&q=80") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.collection-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 10, 5, 0.52);
+}
+
+.collection-hero__content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.collection-hero__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 0.75rem;
+}
+
+.collection-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+
+.collection-hero__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.08em;
+}
+
+/* ── Filter Bar ──────────────────────────────────────────── */
+.collection-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 4rem;
+  border-bottom: 1px solid #e8e0d5;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.collection-filter-bar__categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.collection-filter-btn {
+  padding: 0.45rem 1.2rem;
+  border: 1px solid #c9b99a;
+  background: transparent;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #4a3f35;
+  transition: all 0.2s;
+}
+
+.collection-filter-btn:hover,
+.collection-filter-btn.active {
+  background: #1a0f0a;
+  color: #fff;
+  border-color: #1a0f0a;
+}
+
+.collection-sort-select {
+  padding: 0.45rem 1rem;
+  border: 1px solid #c9b99a;
+  background: transparent;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: #4a3f35;
+  cursor: pointer;
+  outline: none;
+}
+
+/* ── Meta ────────────────────────────────────────────────── */
+.collection-meta {
+  padding: 1rem 4rem 0;
+  font-size: 0.82rem;
+  color: #9a8878;
+  letter-spacing: 0.06em;
+}
+
+/* ── Grid Section ────────────────────────────────────────── */
+.collection-grid-section {
+  padding: 2rem 4rem 5rem;
+
+}

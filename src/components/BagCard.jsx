@@ -1,6 +1,7 @@
 import PhotoSlot from "./PhotoSlot";
 import Stars from "./Stars";
 import { useState } from "react";
+import "./BagCard.css"
 
 export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
   const [added, setAdded] = useState(false);

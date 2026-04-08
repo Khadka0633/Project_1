@@ -1,4 +1,5 @@
 import Stars from "./Stars"
+import "./Testimonials.css"
 export default function Testimonials ({testimonials}) {
 
     return (

@@ -1,3 +1,6 @@
+
+
+import "./StoriesPage.css"
 const STORIES = [
   {
     id: 1,

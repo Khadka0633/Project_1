@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { bags } from "../data/bags";
 import BagCard from "../components/BagCard";
+import "./CollectionPage.css"
 
 const CATEGORIES = ["All", "Tote", "Clutch", "Crossbody", "Shoulder", "Mini"];
 

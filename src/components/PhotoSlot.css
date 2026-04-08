@@ -1,0 +1,55 @@
+.photo-slot {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--sand);
+}
+.photo-slot__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fills slot, crops if needed */
+  object-position: center;  /* centers the subject */
+  display: block;
+  transition: transform 0.7s var(--ease-out);
+}
+.bag-card:hover .photo-slot__img {
+  transform: scale(1.04);
+}
+/* Placeholder shown when no photo */
+.photo-slot__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--sand);
+}
+.photo-slot__placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--mink);
+}
+.photo-slot__icon { opacity: 0.5; }
+.photo-slot__label {
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ghost);
+  text-align: center;
+  max-width: 120px;
+  line-height: 1.4;
+}
+/* Thin color accent bar at bottom of placeholder */
+.photo-slot__color-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  opacity: 0.6;
+}

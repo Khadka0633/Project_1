@@ -1,3 +1,6 @@
+
+
+import "./AboutPage.css"
 const VALUES = [
   {
     icon: "✦",
