@@ -1748,3 +1748,82 @@ body { background: var(--cream); font-family: var(--ff-sans); color: var(--espre
   text-transform: uppercase;
   margin-bottom: 0.4rem;
 }
+
+
+
+/* ── Card photo arrows ────────────────────────────────── */
+.card-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--espresso);
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+.card-arrow--prev { left: 12px; }
+.card-arrow--next { right: 12px; }
+.bag-card:hover .card-arrow { opacity: 1; }
+.card-arrow:hover { background: white; }
+
+/* ── Dot indicators ───────────────────────────────────── */
+.card-dots {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 3;
+}
+.card-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.card-dot--active {
+  background: white;
+  transform: scale(1.3);
+}
+
+/* ── Active color name pill ───────────────────────────── */
+.card-color-pill {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  color: var(--warm-mid);
+  letter-spacing: 0.05em;
+}
+.card-color-pill__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+}
