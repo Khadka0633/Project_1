@@ -1,6 +1,7 @@
 import PhotoSlot from "./PhotoSlot";
 import Stars from "./Stars";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./BagCard.css"
 
 export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
@@ -47,8 +48,10 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
     setTimeout(() => setAdded(false), 1800);
   };
 
+  const navigate = useNavigate()
+
   return (
-    <div className="bag-card">
+    <div className="bag-card" onClick={()=> navigate(`/product/${bag.id}`)}>
       <div className="bag-card__photo-wrap">
 
         {/* Outgoing photo — slides out */}

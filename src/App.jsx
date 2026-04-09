@@ -15,6 +15,7 @@ import NewArrivalsPage from "./pages/NewArrivalsPage";
 import BestsellersPage from "./pages/BestsellersPage";
 import StoriesPage from "./pages/StoriesPage";
 import AboutPage from "./pages/AboutPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 
 export default function App(){
@@ -86,6 +87,16 @@ export default function App(){
           wishlistIds={wishlistIds}
           />} 
           />
+          <Route
+  path="/product/:id"
+  element={
+    <ProductDetailPage
+      addToCart={addToCart}
+      toggleWishlist={toggleWishlist}
+      wishlistIds={wishlistIds}
+    />
+  }
+/>
         <Route path="/stories"      element={<StoriesPage />} />
         <Route path="/about"        element={<AboutPage />} />
       </Routes>
