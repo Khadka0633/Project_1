@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CartSidebar from "./components/CartSidebar"
 import WishlistSidebar from "./components/WishListSidebar";
+import { AuthProvider } from "./context/AuthContext";
+import LoginPage from "./pages/LoginPage";
 
 //pages
 import HomePage from "./pages/HomePage";
@@ -44,13 +46,16 @@ export default function App(){
 
   const wishlistIds = wishlist.map(i => i.id)
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
+  const wishlistCount = wishlist.length;
 
 
   return (
     <>
+    <AuthProvider>
     <Navbar 
     cartCount={cartCount} 
     onCartOpen={() => setCartOpen(true)} 
+    wishlistCount={wishlistCount}
     onWishlistOpen={()=> setWishlistOpen(true)}/>
 
       <Routes>
@@ -63,6 +68,10 @@ export default function App(){
             wishlistIds={wishlistIds}
           />}
         />
+
+
+          <Route path="/login" element={<LoginPage/>}/>
+
 
         <Route path="/collection"   element={
           <CollectionPage 
@@ -115,6 +124,7 @@ export default function App(){
     onAddToCart={(item) => { addToCart(item); setWishlistOpen(false); }}
   />
 )}
+</AuthProvider>
     </>
 
   )

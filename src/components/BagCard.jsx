@@ -51,8 +51,8 @@ export default function BagCard({ bag, onAdd, onWishlist, wishlistIds }) {
   const navigate = useNavigate()
 
   return (
-    <div className="bag-card" onClick={()=> navigate(`/product/${bag.id}`)}>
-      <div className="bag-card__photo-wrap">
+    <div className="bag-card" >
+      <div className="bag-card__photo-wrap" onClick={()=> navigate(`/product/${bag.id}`)}>
 
         {/* Outgoing photo — slides out */}
         {sliding && prevIndex !== null && (
