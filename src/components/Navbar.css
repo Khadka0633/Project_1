@@ -98,3 +98,17 @@
           display: flex; flex-direction: column; gap: 12px;
           background: rgba(245,239,230,0.97);
         }
+
+
+
+
+
+        .signin-text {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .signin-text {
+    display: none;
+  }
+} 

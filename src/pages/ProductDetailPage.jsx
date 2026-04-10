@@ -29,7 +29,7 @@ export default function ProductDetailPage({ addToCart, toggleWishlist, wishlistI
     ? bag.colors
     : [{ name: bag.color, hex: bag.colorHex, photo: bag.photo }];
 
-  const [activeColorIdx, setActiveColorIdx] = useState(0);
+ const [activeColorIdx, setActiveColorIdx] = useState(0);
   const [activePhotoIdx, setActivePhotoIdx] = useState(0);
   const [added, setAdded] = useState(false);
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
@@ -96,7 +96,7 @@ export default function ProductDetailPage({ addToCart, toggleWishlist, wishlistI
               </button>
             ))}
           </div>
-
+        
           {/* Main photo */}
           <div className="pdp__photo-wrap">
             {bag.badge && (
@@ -148,12 +148,13 @@ export default function ProductDetailPage({ addToCart, toggleWishlist, wishlistI
           <p className="pdp__subtitle">{bag.subtitle}</p>
 
           {/* ── Colour selector ────────────────────────── */}
-          {colors.length > 1 && (
+         {colors.length > 1 && (
             <div className="pdp__section">
               <p className="pdp__section-label">
                 Colour — <span className="pdp__section-value">{activeColor.name}</span>
               </p>
-              <div className="pdp__colors">
+              
+            <div className="pdp__colors">
                 {colors.map((c, i) => (
                   <button
                     key={i}
@@ -165,8 +166,10 @@ export default function ProductDetailPage({ addToCart, toggleWishlist, wishlistI
                   />
                 ))}
               </div>
+              
             </div>
           )}
+            
 
           {/* ── Size guide link ────────────────────────── */}
           <div className="pdp__section">
